@@ -14,6 +14,7 @@ function TextStyle(fontSize: number = 50, fontColor: ResourceStr | Color = '#f00
 struct Index {
   @State message: string = 'Hello World';
   @State clickCount: number = 0;
+
   @Styles
   StyleClass() {
     .backgroundColor(Color.Yellow)
@@ -46,9 +47,6 @@ struct Index {
         count: this.clickCount,
         onClickMyButton: () => {
           this.clickCount += 1
-          // promptAction.showToast({
-          //   message: '点击弹窗非常方便'
-          // })
         }
       })
 
