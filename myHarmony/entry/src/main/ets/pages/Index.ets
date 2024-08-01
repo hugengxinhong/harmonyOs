@@ -1,5 +1,6 @@
 import {CustomButton} from './CustomButton'
 import {ItalicText} from './ItalicText'
+import {router} from '@kit.ArkUI'
 import { promptAction } from '@kit.ArkUI'
 
 @Extend(Text)
@@ -37,6 +38,16 @@ struct Index {
       justifyContent: FlexAlign.Center,
       alignItems: ItemAlign.Center
     }){
+      // CustomButton({
+      //   text: '点击跳转',
+      //   count: this.clickCount,
+      //   onClickMyButton: () => {
+      //   }
+      // })
+      Button('点击跳转')
+        .onClick(() => {
+          router.pushUrl({ url: ' pages/AList' })
+        })
       Text(this.message)
         .StyleClass()
         .TextStyle(34, '#06c')
@@ -51,16 +62,6 @@ struct Index {
       })
 
     }
-    // RelativeContainer() {
-    //   Text(this.message)
-    //     .id('HelloWorld')
-    //     .fontSize(50)
-    //     .fontWeight(FontWeight.Bold)
-    //     .alignRules({
-    //       center: { anchor: '__container__', align: VerticalAlign.Center },
-    //       middle: { anchor: '__container__', align: HorizontalAlign.Center }
-    //     })
-    // }
     .height('100%')
     .width('100%')
   }
