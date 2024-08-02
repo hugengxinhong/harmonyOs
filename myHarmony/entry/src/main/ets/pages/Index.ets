@@ -46,7 +46,10 @@ struct Index {
       // })
       Button('点击跳转')
         .onClick(() => {
-          router.pushUrl({ url: ' pages/AList' })
+          let option: router.RouterOptions = {
+            url: 'pages/AList'
+          }
+          router.pushUrl(option)
         })
       Text(this.message)
         .StyleClass()
